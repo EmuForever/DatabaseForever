@@ -31,7 +31,7 @@ CREATE TABLE `realmlist` (
   `timezone` tinyint unsigned NOT NULL DEFAULT '0',
   `allowedSecurityLevel` tinyint unsigned NOT NULL DEFAULT '0',
   `population` float NOT NULL DEFAULT '0',
-  `gamebuild` int unsigned NOT NULL DEFAULT '70291',
+  `gamebuild` int unsigned NOT NULL DEFAULT '70634',
   `Region` tinyint unsigned NOT NULL DEFAULT '1',
   `Battlegroup` tinyint unsigned NOT NULL DEFAULT '1',
   `contentSetId` int unsigned NOT NULL DEFAULT '137',
@@ -41,7 +41,7 @@ CREATE TABLE `realmlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Realm System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `realmlist` VALUES (70,'Normal','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8085,0,0,1,0,0,70532,70,1,137,0),(71,'PvP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8095,1,0,1,0,0,70532,70,1,136,0),(72,'RP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8105,0,0,1,0,0,70532,70,1,138,0),(73,'Hardcore','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8115,0,0,1,0,0,70532,70,1,140,1);
+INSERT INTO `realmlist` VALUES (70,'Normal','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8085,0,0,1,0,0,70634,70,1,137,0),(71,'PvP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8095,1,0,1,0,0,70634,70,1,136,0),(72,'RP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8105,0,0,1,0,0,70634,70,1,138,0),(73,'Hardcore','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8115,0,0,1,0,0,70634,70,1,140,1);
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
