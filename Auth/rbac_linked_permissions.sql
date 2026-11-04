@@ -28,7 +28,6 @@ CREATE TABLE `rbac_linked_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Permission - Linked Permission relation';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-/*!40000 ALTER TABLE `rbac_linked_permissions` DISABLE KEYS */;
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (192,7);
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (192,21);
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (192,42);
@@ -709,7 +708,6 @@ INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199,507);
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199,525);
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199,534);
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199,797);
-/*!40000 ALTER TABLE `rbac_linked_permissions` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -719,3 +717,4 @@ INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199,797);
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+

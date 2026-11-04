@@ -46,9 +46,12 @@ CREATE TABLE `account` (
   `recruiter` int unsigned NOT NULL DEFAULT '0',
   `battlenet_account` int unsigned DEFAULT NULL,
   `battlenet_index` tinyint unsigned DEFAULT NULL,
+  `bnot_name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bnot_name_key` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci GENERATED ALWAYS AS (coalesce(nullif(`bnot_name`,_utf8mb4''),`username`)) STORED,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_username` (`username`),
   UNIQUE KEY `uk_bnet_acc` (`battlenet_account`,`battlenet_index`),
+  UNIQUE KEY `uk_bnot_account_name` (`battlenet_account`,`bnot_name_key`),
   CONSTRAINT `fk_bnet_acc` FOREIGN KEY (`battlenet_account`) REFERENCES `bnot_accounts` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Account System';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -61,3 +64,4 @@ CREATE TABLE `account` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
