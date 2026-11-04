@@ -1,6 +1,6 @@
 -- DatabaseForever base database: auth.rbac_default_permissions
--- Base content only; private player/runtime records are excluded.
-CREATE DATABASE IF NOT EXISTS `auth` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- Public configuration/reference data included.
+CREATE DATABASE IF NOT EXISTS `auth` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `auth`;
 
 
@@ -27,7 +27,12 @@ CREATE TABLE `rbac_default_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Default permission to assign to different account security levels';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `rbac_default_permissions` VALUES (0,195,-1),(1,194,-1),(2,193,-1),(3,192,-1);
+/*!40000 ALTER TABLE `rbac_default_permissions` DISABLE KEYS */;
+INSERT INTO `rbac_default_permissions` (`secId`, `permissionId`, `realmId`) VALUES (0,195,-1);
+INSERT INTO `rbac_default_permissions` (`secId`, `permissionId`, `realmId`) VALUES (1,194,-1);
+INSERT INTO `rbac_default_permissions` (`secId`, `permissionId`, `realmId`) VALUES (2,193,-1);
+INSERT INTO `rbac_default_permissions` (`secId`, `permissionId`, `realmId`) VALUES (3,192,-1);
+/*!40000 ALTER TABLE `rbac_default_permissions` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -37,4 +42,3 @@ INSERT INTO `rbac_default_permissions` VALUES (0,195,-1),(1,194,-1),(2,193,-1),(
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-

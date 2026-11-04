@@ -1,6 +1,6 @@
 -- DatabaseForever base database: auth.bnot_message
--- Structure only: private/runtime, historical backup, or intentionally empty seed data.
-CREATE DATABASE IF NOT EXISTS `auth` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- Structure only; private/account/runtime data excluded.
+CREATE DATABASE IF NOT EXISTS `auth` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `auth`;
 
 
@@ -37,4 +37,3 @@ CREATE TABLE `bnot_message` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-

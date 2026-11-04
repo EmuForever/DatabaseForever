@@ -1,6 +1,6 @@
 -- DatabaseForever base database: auth.updates_include
--- Base content only; private player/runtime records are excluded.
-CREATE DATABASE IF NOT EXISTS `auth` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- Public configuration/reference data included.
+CREATE DATABASE IF NOT EXISTS `auth` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `auth`;
 
 
@@ -24,7 +24,8 @@ CREATE TABLE `updates_include` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='List of directories where we want to include sql updates.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `updates_include` VALUES ('$/sql/custom/auth','RELEASED'),('$/sql/old/10.x/auth','ARCHIVED'),('$/sql/old/11.x/auth','ARCHIVED'),('$/sql/old/12.x/auth','ARCHIVED'),('$/sql/old/6.x/auth','ARCHIVED'),('$/sql/old/7/auth','ARCHIVED'),('$/sql/old/8.x/auth','ARCHIVED'),('$/sql/old/9.x/auth','ARCHIVED'),('$/sql/updates/auth','RELEASED');
+/*!40000 ALTER TABLE `updates_include` DISABLE KEYS */;
+/*!40000 ALTER TABLE `updates_include` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -34,4 +35,3 @@ INSERT INTO `updates_include` VALUES ('$/sql/custom/auth','RELEASED'),('$/sql/ol
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-

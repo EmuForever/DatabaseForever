@@ -1,6 +1,6 @@
 -- DatabaseForever base database: auth.realmlist
--- Base content only; private player/runtime records are excluded.
-CREATE DATABASE IF NOT EXISTS `auth` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- Public configuration/reference data included.
+CREATE DATABASE IF NOT EXISTS `auth` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `auth`;
 
 
@@ -31,7 +31,7 @@ CREATE TABLE `realmlist` (
   `timezone` tinyint unsigned NOT NULL DEFAULT '0',
   `allowedSecurityLevel` tinyint unsigned NOT NULL DEFAULT '0',
   `population` float NOT NULL DEFAULT '0',
-  `gamebuild` int unsigned NOT NULL DEFAULT '70685',
+  `gamebuild` int unsigned NOT NULL DEFAULT '70755',
   `Region` tinyint unsigned NOT NULL DEFAULT '1',
   `Battlegroup` tinyint unsigned NOT NULL DEFAULT '1',
   `contentSetId` int unsigned NOT NULL DEFAULT '137',
@@ -41,7 +41,16 @@ CREATE TABLE `realmlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Realm System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `realmlist` VALUES (70,'Normal','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8085,0,0,1,0,0,70685,70,1,137,0),(71,'PvP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8095,1,0,1,0,0,70685,70,1,136,0),(72,'RP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8105,0,0,1,0,0,70685,70,1,138,0),(73,'Hardcore','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8115,0,0,1,0,0,70685,70,1,140,1);
+/*!40000 ALTER TABLE `realmlist` DISABLE KEYS */;
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (70,'Normal','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8085,0,0,1,0,0,70755,70,1,137,0);
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (71,'PvP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8095,1,0,1,0,0,70707,70,1,136,0);
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (72,'RP','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8105,0,0,1,0,0,70707,70,1,138,0);
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (73,'Hardcore','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8115,0,0,1,0,0,70707,70,1,140,1);
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (75,'Burning Crusade Anniversary','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8215,0,0,1,0,0,70577,70,1,140,1);
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (76,'Midnight','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8225,0,0,1,0,0,70688,70,1,137,0);
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (77,'Mists of Pandaria Classic','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8235,0,0,1,0,0,70631,70,1,137,0);
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `address3`, `address4`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`, `Region`, `Battlegroup`, `contentSetId`, `hardcore`) VALUES (78,'Classic Era','127.0.0.1','127.0.0.1',NULL,NULL,'255.255.255.0',8245,0,0,1,0,0,70576,70,1,137,0);
+/*!40000 ALTER TABLE `realmlist` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -51,4 +60,3 @@ INSERT INTO `realmlist` VALUES (70,'Normal','127.0.0.1','127.0.0.1',NULL,NULL,'2
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
